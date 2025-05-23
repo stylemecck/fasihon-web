@@ -1,11 +1,13 @@
-import React, { Children } from 'react'
+import React from 'react';
 
-const Container = ({ children, className = ''  }) => {
-    return (
-        <div className={`md:w-full  sm:w-full mx-auto h-screen flex flex-wrap md:gap-x-4 gap-x-3 gap-y-4 items-center justify-center  ${className} `}>
-            {children}
-        </div>
-    )
-}
+const Container = ({ children, className = '' }) => {
+  return (
+    <div
+      className={`w-[90vw] mx-auto min-h-screen px-4 py-8 flex flex-wrap justify-center items-center gap-4 md:gap-6 ${className} `}
+    >
+      {children}
+    </div>
+  );
+};
 
-export default Container
+export default Container;

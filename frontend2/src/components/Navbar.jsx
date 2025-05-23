@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addSearchData } from '../redux/productSlice';
 import { FaBars, FaTimes, FaShoppingBag, FaUser, FaSearch } from 'react-icons/fa';
 import { IoIosArrowDown } from "react-icons/io";
@@ -33,6 +33,7 @@ const Navbar = () => {
     dispatch(addSearchData(search));
     navigate('/search');
     setShowSearch(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const isAuthenticated = !!User;
@@ -45,6 +46,7 @@ const Navbar = () => {
       navigate('/');
       toast.success("Logout successful");
       setShowUserMenu(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err) {
       console.error("Logout failed", err);
     }
@@ -94,7 +96,6 @@ const Navbar = () => {
   return (
     <header className="fixed z-50 w-full text-black border-b border-gray-100 shadow-sm bg-white/90 backdrop-blur-sm">
       <div className="flex items-center justify-between p-4 mx-auto max-w-7xl">
-        {/* Hamburger */}
         <button
           onClick={() => setShowMenu(!showMenu)}
           className="text-xl text-gray-700 transition-colors md:hidden hover:text-rose-500"
@@ -102,25 +103,28 @@ const Navbar = () => {
           {showMenu ? <FaTimes /> : <FaBars />}
         </button>
 
-        {/* Logo */}
-        <div className="flex-grow text-center md:flex-grow-0">
+        <div className="flex-grow hidden text-center md:flex-grow-0 md:block">
           <h1 className="font-serif text-xl font-bold tracking-widest">Fashion Ease</h1>
           <p className="text-xs text-gray-500">The best place for fashion</p>
         </div>
+        <div className='flex items-start md:items-center'>
+          <img className='h-10 ' src="logo2.svg" alt="" />
+        </div>
 
-        {/* Right Section */}
         <div className="flex items-center gap-4 md:gap-6">
           <button
             onClick={() => setShowSearch(true)}
             className="items-center hidden gap-1 text-gray-700 transition-colors md:flex hover:text-rose-500"
           >
             <FaSearch className="text-lg" />
-            {/* <span className="text-sm">SEARCH</span> */}
           </button>
 
           <div className="relative flex items-center gap-1">
             <button 
-              onClick={() => navigate('/cart')}
+              onClick={() => {
+                navigate('/cart');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               className="flex items-center gap-1 text-gray-700 transition-colors hover:text-rose-500"
             >
               <FaShoppingBag className="text-lg" />
@@ -147,7 +151,10 @@ const Navbar = () => {
                     <NavLink
                       to="/profile"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50"
-                      onClick={() => setShowUserMenu(false)}
+                      onClick={() => {
+                        setShowUserMenu(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                     >
                       My Account
                     </NavLink>
@@ -163,14 +170,20 @@ const Navbar = () => {
                     <NavLink
                       to="/login"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50"
-                      onClick={() => setShowUserMenu(false)}
+                      onClick={() => {
+                        setShowUserMenu(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                     >
                       Login
                     </NavLink>
                     <NavLink
                       to="/signup"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-rose-50"
-                      onClick={() => setShowUserMenu(false)}
+                      onClick={() => {
+                        setShowUserMenu(false);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                     >
                       Sign Up
                     </NavLink>
@@ -182,7 +195,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Desktop Nav Links */}
       <nav className="relative z-40 justify-center hidden gap-1 py-3 md:flex bg-white/80">
         {menuItems.map((item) => {
           const links = item.label === "MEN'S" ? menLinks : womenLinks;
@@ -197,6 +209,10 @@ const Navbar = () => {
               <NavLink 
                 to={item.path} 
                 className={linkClass}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  setHovered('');
+                }}
               >
                 {item.label}
                 {item.dropdown && (
@@ -213,7 +229,10 @@ const Navbar = () => {
                       key={link.label}
                       to={link.path}
                       className="block px-4 py-2 text-sm text-gray-700 transition rounded-md hover:bg-rose-50"
-                      onClick={() => setHovered('')}
+                      onClick={() => {
+                        setHovered('');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
                     >
                       {link.label}
                     </NavLink>
@@ -225,7 +244,6 @@ const Navbar = () => {
         })}
       </nav>
 
-      {/* Mobile Menu */}
       {showMenu && (
         <div className="space-y-1 bg-white border-t border-gray-100 shadow-lg md:hidden">
           {menuItems.map((item) => {
@@ -252,7 +270,10 @@ const Navbar = () => {
                           key={link.label}
                           to={link.path}
                           className="block px-4 py-2 text-sm text-gray-700 rounded hover:bg-rose-50"
-                          onClick={() => setShowMenu(false)}
+                          onClick={() => {
+                            setShowMenu(false);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                          }}
                         >
                           {link.label}
                         </NavLink>
@@ -268,7 +289,10 @@ const Navbar = () => {
                 key={item.label}
                 to={item.path}
                 className="block px-4 py-3 font-medium text-gray-800 hover:bg-gray-50"
-                onClick={() => setShowMenu(false)}
+                onClick={() => {
+                  setShowMenu(false);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               >
                 {item.label}
               </NavLink>
@@ -277,7 +301,6 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Search Overlay */}
       {showSearch && (
         <div 
           className="fixed inset-0 z-50 flex flex-col items-center justify-center p-4 bg-white/95"

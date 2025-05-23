@@ -24,7 +24,7 @@ const WomensAll = () => {
 
 
     if (error || status === 'failed') {
-        return <p className='w-full text-2xl flex h-screen justify-center items-center'>Error: {error}</p>;
+        return <p className='flex items-center justify-center w-full h-screen text-2xl'>Error: {error}</p>;
     }
 
     if (status === 'loading') return <Loader />;

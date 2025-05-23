@@ -33,7 +33,7 @@ const PromoBanner = () => {
                   </svg>
                 </a>
                 <a
-                  href="/collections"
+                  href="/shop"
                   className="inline-flex items-center justify-center border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-md hover:-translate-y-0.5"
                 >
                   View All Collections
@@ -46,7 +46,7 @@ const PromoBanner = () => {
           <div className="relative lg:w-2/5 h-64 sm:h-80 lg:h-auto min-h-[250px]">
             <div className="absolute inset-0 transition-opacity duration-500 rounded-lg opacity-0 bg-gradient-to-r from-amber-400/10 to-pink-400/10 group-hover:opacity-100" />
             <img
-              src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              src="https://res.cloudinary.com/drwyb8kwy/image/upload/v1747988284/t0xhrqkp2xicjoeidre2.png"
               alt="Spring collection"
               className="object-cover w-full h-full transition-transform duration-500 lg:absolute lg:inset-0 group-hover:scale-105"
               loading="lazy"

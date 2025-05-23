@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Souradip Hazra",
+    "role": "CEO & Founder",
+    "image": "https://scontent.fpat3-1.fna.fbcdn.net/v/t39.30808-1/499049836_1757451865155721_2168109867882334997_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=1d2534&_nc_ohc=tXHoF3Jt6l8Q7kNvwGbE21S&_nc_oc=Adl_qh4bnNVBMVloq0yD2Zo-2QkO-IVw5Q8RtPpIs4NXRTmFNtUvHLgKnMuFYhHL3yBNF-Fm8OAOBwh5QrD0z7IK&_nc_zt=24&_nc_ht=scontent.fpat3-1.fna&_nc_gid=h5M15H1Mdk4AxQ-SK3TptQ&oh=00_AfKgX6DpMYRjYIoSEnk0o_nF9MmUlgdd6jLRjUY08PI7fQ&oe=6835D809"
+  },
+  {
+    "id": 2,
+    "name": "Satyam Kumar",
+    "role": "MD",
+    "image": "https://scontent.fpat3-1.fna.fbcdn.net/v/t39.30808-1/499049836_1757451865155721_2168109867882334997_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=103&ccb=1-7&_nc_sid=1d2534&_nc_ohc=tXHoF3Jt6l8Q7kNvwGbE21S&_nc_oc=Adl_qh4bnNVBMVloq0yD2Zo-2QkO-IVw5Q8RtPpIs4NXRTmFNtUvHLgKnMuFYhHL3yBNF-Fm8OAOBwh5QrD0z7IK&_nc_zt=24&_nc_ht=scontent.fpat3-1.fna&_nc_gid=h5M15H1Mdk4AxQ-SK3TptQ&oh=00_AfKgX6DpMYRjYIoSEnk0o_nF9MmUlgdd6jLRjUY08PI7fQ&oe=6835D809"
+  },
+  {
+    "id": 3,
+    "name": "Chayan Samnta",
+    "role": "Marketing Head",
+    "image": "/team-member-3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Subhadip Sarkar",
+    "role": "Marketing Head",
+    "image": "/team-member-4.jpg"
+  }
+]

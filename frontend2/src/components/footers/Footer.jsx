@@ -12,7 +12,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="transition hover:text-gray-300">Contact Us</a></li>
               <li><a href="#" className="transition hover:text-gray-300">Shipping Policy</a></li>
-              <Link to='/returns-exchanges'><li><a href="#" className="transition hover:text-gray-300">Returns & Exchanges</a></li></Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to='/returns-exchanges'><li><a href="#" className="transition hover:text-gray-300">Returns & Exchanges</a></li></Link>
               <li><a href="#" className="transition hover:text-gray-300">FAQs</a></li>
             </ul>
           </div>
@@ -21,9 +21,9 @@ const Footer = () => {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Company</h3>
             <ul className="space-y-2">
-              <Link to="/about"> <li><a className="transition hover:text-gray-300">About Us</a></li></Link> 
+              <Link onClick={() => window.scrollTo(0, 0)} to="/about"> <li><a className="transition hover:text-gray-300">About Us</a></li></Link> 
               <li><a href="#" className="transition hover:text-gray-300">Careers</a></li>
-              <Link to="privacy"><li><a href="#" className="transition hover:text-gray-300">Privacy Policy</a></li> </Link>
+              <Link onClick={() => window.scrollTo(0, 0)} to="privacy"><li><a href="#" className="transition hover:text-gray-300">Privacy Policy</a></li> </Link>
               <li><a href="#" className="transition hover:text-gray-300">Terms of Service</a></li>
             </ul>
           </div>

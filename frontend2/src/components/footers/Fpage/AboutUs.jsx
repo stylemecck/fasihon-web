@@ -1,8 +1,9 @@
-import { FaTruck, FaShieldAlt, FaSmile, FaUsers } from 'react-icons/fa';
+import { FaTruck, FaShieldAlt, FaSmile } from 'react-icons/fa';
+import teamMembers from '../data/teamMembers.json'; // adjust the path if needed
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen pt-20 bg-gray-50 mt-[8%]">
+    <div className="min-h-screen pt-20 bg-gray-50 mt-[2%]">
       {/* Hero Section */}
       <section className="py-20 text-white bg-gray-900">
         <div className="max-w-6xl px-4 mx-auto text-center sm:px-6 lg:px-8">
@@ -41,7 +42,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Core Values */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
           <h2 className="mb-12 text-3xl font-bold text-center">Our Core Values</h2>
@@ -78,17 +79,16 @@ const AboutUs = () => {
         <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
           <h2 className="mb-12 text-3xl font-bold text-center">Meet Our Team</h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="overflow-hidden transition-shadow bg-white rounded-lg shadow-md hover:shadow-lg">
+            {teamMembers.map(member => (
+              <div key={member.id} className="overflow-hidden transition-shadow bg-white rounded-lg shadow-md hover:shadow-lg">
                 <img 
-                  src={`/team-member-${item}.jpg`} 
-                  alt={`Team Member ${item}`} 
+                  src={member.image} 
+                  alt={member.name} 
                   className="object-cover w-full h-64"
                 />
                 <div className="p-4">
-                  <h3 className="text-lg font-bold">John Doe</h3>
-                  <p className="text-gray-600">CEO & Founder</p>
-                 
+                  <h3 className="text-lg font-bold">{member.name}</h3>
+                  <p className="text-gray-600">{member.role}</p>
                 </div>
               </div>
             ))}
@@ -96,7 +96,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats */}
       <section className="py-16 text-white bg-gray-900">
         <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
@@ -120,8 +120,8 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-white">
+      {/* CTA */}
+      {/* <section className="py-16 bg-white">
         <div className="max-w-4xl px-4 mx-auto text-center sm:px-6 lg:px-8">
           <h2 className="mb-6 text-3xl font-bold">Join Our Journey</h2>
           <p className="max-w-2xl mx-auto mb-8 text-gray-600">
@@ -132,7 +132,7 @@ const AboutUs = () => {
             View Career Opportunities
           </button>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

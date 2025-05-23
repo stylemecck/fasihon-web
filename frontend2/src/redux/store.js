@@ -40,12 +40,12 @@ export const store = configureStore({
         [authApi.reducerPath]: authApi.reducer,
         [cartApi.reducerPath]: cartApi.reducer,
         [productApi.reducerPath]: productApi.reducer,
-        [orderApi.reducerPath]: orderApi.reducer // Add orderApi reducer
+        [orderApi.reducerPath]: orderApi.reducer, // Add orderApi reducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
             .concat(authApi.middleware)
             .concat(cartApi.middleware)
             .concat(productApi.middleware)
-            .concat(orderApi.middleware) // Add orderApi middleware
+            .concat(orderApi.middleware), // Add orderApi middleware
 })

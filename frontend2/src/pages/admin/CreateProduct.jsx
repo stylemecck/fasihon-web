@@ -167,6 +167,9 @@ export default function Dashboard() {
               <option value="T-shirts">T-shirts</option>
               <option value="Shorts">Shorts</option>
               <option value="Jeans">Jeans</option>
+              <option value="One-pice">One Pice</option>
+              <option value="Top-wear">Top Wear</option>
+              <option value="Saree">Saree</option>
               <option value="Casual-Trousers">Casual Trousers</option>
             </select>
           </div>

@@ -73,7 +73,7 @@ from routes.cart_routes import cart_bp
 from routes.order_routes import order_bp
 
 app.register_blueprint(auth_bp)
-app.register_blueprint(product_bp)
+app.register_blueprint(product_bp, url_prefix='/api/v1')
 app.register_blueprint(cart_bp)
 app.register_blueprint(order_bp)
 

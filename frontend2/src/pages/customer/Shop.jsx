@@ -27,7 +27,7 @@ const Shop = () => {
   if (isLoading) return <Loader />;
 
   return (
-    <Container className={`py-16 px-4 md:px-8 ${themeColors.textPrimary}`}>
+    <Container className={`py-16 px-4 md:px-8 ${themeColors.textPrimary} mt-[8%]`}>
      
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
