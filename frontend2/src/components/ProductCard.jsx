@@ -78,6 +78,8 @@ import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useGetProfileQuery } from "../redux/authApi";
 import { useAddToCartMutation } from "../redux/cartApi";
+import FBotton from "../components/FButton";
+import FButton from "../components/FButton";
 
 const ProductCard = ({ image, title, price, description, id }) => {
   const navigate = useNavigate();
@@ -125,6 +127,7 @@ const ProductCard = ({ image, title, price, description, id }) => {
         )}
 
         {/* Add to Cart Button - Always visible but more prominent on hover */}
+        
         <button
           onClick={handleAddToCart}
           disabled={adding}

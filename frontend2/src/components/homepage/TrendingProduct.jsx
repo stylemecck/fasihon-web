@@ -330,6 +330,7 @@ import toast from "react-hot-toast";
 import Container from "../../components/common/Container";
 import Loader from "../../components/common/Loader";
 import { ShoppingBag, Plus, ArrowDown } from "lucide-react";
+import FButton from "../FButton";
 
 const TrendingProducts = () => {
   const { data: products, error, isError, isLoading } = useGetProductsQuery();
@@ -420,6 +421,7 @@ const TrendingProducts = () => {
               )}
 
               {/* Quick Add to Cart Button (Plus icon) */}
+              
               <button
                 onClick={(e) => {
                   e.preventDefault();
@@ -451,7 +453,7 @@ const TrendingProducts = () => {
                 </span>
                 
                 {/* Buy Now Button (redirects to checkout) */}
-                <button
+                <FButton
                   onClick={(e) => {
                     e.preventDefault();
                     handleBuyNow(product.id);
@@ -463,7 +465,7 @@ const TrendingProducts = () => {
                 >
                   <ShoppingBag className="w-4 h-4" />
                   {adding ? "Processing..." : "Buy Now"}
-                </button>
+                </FButton>
               </div>
             </div>
           </div>

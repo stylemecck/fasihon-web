@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { useGetProfileQuery } from "../../redux/authApi";
 import { useFetchCartItemsQuery } from "../../redux/cartApi";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom"; // Add this import
+import FButton from "../../components/FButton";
 
 const CheckoutPage = () => {
+  const navigate = useNavigate(); // adeed new
   const [formData, setFormData] = useState({
     shippingName: "",
     shippingAddress: "",
@@ -132,6 +135,20 @@ const CheckoutPage = () => {
             if (validateData.status === "paid") {
               toast.success("Payment successful! Thank you for your order.");
               await cartRefetch();
+            }
+            // new field added
+            if (validateData.status === "paid") {
+              toast.success("Payment successful! Redirecting...");
+              await cartRefetch();
+
+              navigate("/success", {
+                state: {
+                  orderNumber: validateData.orderId,
+                  amount: total,
+                  deliveryDate: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
+                  products: cartData?.[0] || [],
+                },
+              });
             }
           } catch (err) {
             setPaymentError(err.message || "Payment validation failed");
@@ -263,13 +280,16 @@ const CheckoutPage = () => {
               <div className="text-sm text-red-600">{paymentError}</div>
             )}
 
-            <button
+            <FButton
+              fullWidth
+              color="black"
+              bgColor="#E5E4E2"
               type="submit"
               disabled={isProcessing}
-              className="w-full px-4 py-2 text-lg font-semibold text-white bg-black rounded-md hover:bg-gray-700 disabled:bg-blue-300"
+              //  className="w-full px-4 py-2 text-lg font-semibold text-white bg-black rounded-md hover:bg-gray-700 disabled:bg-blue-300"
             >
               {isProcessing ? "Processing..." : "Place Order"}
-            </button>
+            </FButton>
           </form>
         </div>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import FButton from '../FButton';
 
 const Newsletter = () => {
   return (
@@ -29,12 +30,14 @@ const Newsletter = () => {
                   </svg>
                 </span>
               </div>
-              <button 
+
+              
+              <FButton bgColor='#E5E4E2' color='black'
                 type="submit" 
-                className="px-8 py-3 text-white transition-colors duration-300 transform bg-black rounded-lg hover:bg-gray-800 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+                // className="px-8 py-3 text-white transition-colors duration-300 transform bg-black rounded-lg hover:bg-gray-800 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
               >
                 Subscribe
-              </button>
+              </FButton>
             </div>
           </form>
           

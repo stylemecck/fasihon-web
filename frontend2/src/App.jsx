@@ -37,6 +37,7 @@ import ScrollToTop from './components/common/ScrollToTop';
 import UserProfile from './pages/customer/UserProfile';
 import ProductPage from './pages/customer/ProductPage';
 import 'aos/dist/aos.css';
+import SuccessPage from './pages/customer/SuccessPage';
 
 
 
@@ -82,6 +83,7 @@ function App() {
       <Route path='login' element={<Login />} />
       <Route path='signup' element={<SignUp />} />
       <Route path='profile' element={<UserProfile />} />
+      <Route path='//success' element={<SuccessPage />} />
 
       {/* Footer pages */}
       <Route path='/about' element={<AboutUs />} />
